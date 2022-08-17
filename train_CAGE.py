@@ -34,7 +34,7 @@ def get_model(n_feat, n_cls):
         set_seed(args.seed, use_cuda)
 
     if args.lambda_ssl > 0:
-        proj_dim = int(args.trial.split('_')[-1])
+        proj_dim = args.proj_dim
     else:
         proj_dim = 0
     

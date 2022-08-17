@@ -10,7 +10,7 @@ parser.add_argument('--batch_size', type=int, default=64, help='batch_size')
 parser.add_argument('--num_workers', type=int, default=4, help='num of workers to use')
 parser.add_argument('--epochs', type=int, default=200, help='number of training epochs')
 parser.add_argument('--window_width', type=int, default=0, help='window width')
-parser.add_argument('--normalize', action='store_true', default=True, help='normalize signal based on mean/std of training samples')
+parser.add_argument('--normalize', action='store_true', default=False, help='normalize signal based on mean/std of training samples')
 parser.add_argument('--pretrain', action='store_true', default=False)
 
 # optimization
@@ -29,9 +29,7 @@ parser.add_argument('--model_path', type=str, default='save', help='path to save
 parser.add_argument('--load_model', type=str, default='', help='load the pretrained model')
 parser.add_argument('--lambda_cls', type=float, default=1.0, help='loss weight for classification loss')
 parser.add_argument('--lambda_ssl', type=float, default=1.0, help='loss weight for reconstruction loss')
-parser.add_argument('--modality', type=str, default='accel', help='trial id')
-
-parser.add_argument('--split_ver', type=str, default='', help='trial id')
+parser.add_argument('--proj_dim', type=int, default=64)
 
 args = parser.parse_args()
 if args.pretrain:
